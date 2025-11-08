@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        .basic {
+            height: 90px;
+            width: 290px;
+            font-size: 28px;
+            color: white;
+            border: none;
+            background-color: blue;
+            transition-property: background-color color width;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+
+        .basic:hover {
+            background-color: green;
+            color: black;
+            width: 600px;
+        }
+
+        .basic2 {
+            height: 90px;
+            width: 290px;
+            font-size: 28px;
+            color: white;
+            border: none;
+            background-color: blue;
+            transition: background-color 3s ease-in-out 1s,
+            color 2s ease 4s, border-radius 4s ease-out 6s;
+        }
+
+        .basic2:hover {
+            background-color: green;
+            color: black;
+            /* width: 600px; */
+            border-radius: 50%;
+        }
+        .basic3 {
+            height: 90px;
+            width: 290px;
+            font-size: 28px;
+            color: white;
+            border: none;
+            background-color: blue;
+            transition: all 3s ease-in 2s;
+        }
+
+        .basic3:hover {
+            background-color: green;
+            color: black;
+            width: 600px;
+            border-radius: 50%;
+        }
+
+        .timing {
+            display: flex;
+            flex-direction: column;
+            /* gap: 10px; */
+            width: 960px;
+        }
+        .move {
+            margin: 1em;
+            width: 150px;
+            height: 50px;
+            padding: 10px 15px;
+            background-color: orangered;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 0.5em;
+            font-size: 20px;
+            transition-property: translate();
+            transition-duration: 3s;
+        }
+        #ease {
+            transition-timing-function: ease;
+        }
+        #linear {
+            transition-timing-function: linear;
+        }
+        #ease-in {
+            transition-timing-function: ease-in;
+        }
+        #ease-out {
+            transition-timing-function: ease-out;
+        }   
+        #ease-in-out {
+            transition-timing-function: ease-in-out;
+        }
+        .move:hover {
+            transform: translate(900px,0);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="basic">CSS Transition</button>
+    <hr>
+    <button class="basic2">CSS Transition</button>
+    <hr />
+    <button class="basic3">CSS Transition</button>
+    <hr />
+    <h2>Timing functions example</h2>
+    <div class="timing">
+        <button class="move" id="ease">Ease (Default)</button>
+        <button class="move" id="linear">Linear</button>
+        <button class="move" id="ease-in">Ease-In</button>
+        <button class="move" id="ease-out">Ease-Out</button>
+        <button class="move" id="ease-in-out">Ease-In-Out</button>
+</body>
+</div>
+
+</html>
